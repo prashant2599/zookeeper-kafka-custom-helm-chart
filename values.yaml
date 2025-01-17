@@ -1,0 +1,10 @@
+replicaCount: 3
+
+image:
+  repository: bitnami/zookeeper
+  tag: latest
+
+persistence:
+  enabled: true
+  size: 1Gi
+  hostPath: /mnt/data/zookeeper
