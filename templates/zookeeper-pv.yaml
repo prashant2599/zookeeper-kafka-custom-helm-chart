@@ -4,9 +4,9 @@ metadata:
   name: {{ .Release.Name }}-zookeeper-pv
 spec:
   capacity:
-    storage: {{ .Values.persistence.size }}
+    storage: {{ .Values.zookeeper.persistence.size }}
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "{{ .Values.persistence.hostPath }}"
+    path: "{{ .Values.zookeeper.persistence.hostPath }}"

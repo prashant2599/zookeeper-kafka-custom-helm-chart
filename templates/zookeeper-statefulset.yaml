@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: zookeeper
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          image: {{ .Values.zookeeper.image.repository }}:{{ .Values.zookeeper.image.tag }}
           ports:
             - containerPort: 2181
           env:
@@ -31,4 +31,4 @@ spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: {{ .Values.persistence.size }}
+            storage: {{ .Values.zookeeper.persistence.size }}

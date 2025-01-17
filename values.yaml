@@ -1,10 +1,37 @@
-replicaCount: 3
+# replicaCount: 3
 
-image:
-  repository: bitnami/zookeeper
-  tag: latest
+# image:
+#   repository: bitnami/zookeeper
+#   tag: latest
 
-persistence:
-  enabled: true
-  size: 1Gi
-  hostPath: /mnt/data/zookeeper
+# persistence:
+#   enabled: true
+#   size: 1Gi
+#   hostPath: /mnt/data/zookeeper
+# Zookeeper Configuration
+zookeeper:
+  replicaCount: 3
+
+  image:
+    repository: bitnami/zookeeper
+    tag: latest
+
+  persistence:
+    enabled: true
+    size: 1Gi
+    hostPath: /mnt/data/zookeeper
+
+# Kafka Configuration
+kafka:
+  replicaCount: 3
+
+  image:
+    repository: bitnami/kafka
+    tag: latest
+
+  persistence:
+    enabled: true
+    size: 2Gi  # Adjust the size of the Kafka storage as needed
+    hostPath: /mnt/data/kafka  # Optional: Set Kafka hostPath if needed
+
+  nodePort: 31000  # Expose Kafka externally via NodePort
